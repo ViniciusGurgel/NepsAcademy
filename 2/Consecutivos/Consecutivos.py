@@ -19,3 +19,23 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# ------------------------------------------------------------ #
+def main():
+    _ = input()
+    lista = list(map(int, input().split()))
+    max_count = 0
+    current_count = 1
+    
+    for i in range(1, len(lista)):
+        if lista[i] == lista[i - 1]:
+            current_count += 1
+        else:
+            current_count = 1
+        
+        max_count = max(max_count, current_count)
+    
+    print(max_count)
+
+if __name__ == "__main__":
+    main()
