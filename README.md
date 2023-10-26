@@ -1,1 +1,1 @@
-"# NepsAcademy" 
+# NepsAcademy
