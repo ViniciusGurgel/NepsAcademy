@@ -1,10 +1,5 @@
 # Lendo a entrada do exercício
 A, B = map(int, input().split())
-if A == 1:
-	if B ==1:
-		print("A")
-	else:
-		print("B")
-else:
-	print("C")
+resultado = "A" if A == 1 and B == 1 else "B" if A == 1 else "C"
+print(resultado)
 # Seu código vai aqui
