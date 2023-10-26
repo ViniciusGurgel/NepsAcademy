@@ -1,7 +1,6 @@
 def main():
     A = int(input())
-    B = input()
-    lista = [int(n) for n in B.split()]
+    lista = [int(n) for n in input().split()]
     consecutive = 0
     max = 0
     for n in range(len(lista)-1):
