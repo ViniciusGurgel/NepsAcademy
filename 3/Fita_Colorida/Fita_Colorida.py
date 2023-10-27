@@ -1,14 +1,14 @@
 def main():
-    A = input()
-    lista = [int(n) for n in input().split()]
-    lista_0 = [index for index,value in enumerate(lista) if value == 0]
-    lista_final = []
-    for i,v in enumerate(lista):
-        lista_ax = []
-        for _ in lista_0:
-            lista_ax.append(abs(i-_))
-        lista_final.append(min(lista_ax))
-    print(' '.join(map(str,lista_final)))
+    A = int(input())
+    lista = list(map(int, input().split()))
+    n = len(lista)
+    resultado = [0] * n
+    lista_0 = [i for i in range(n) if lista[i] == 0]
+    for i in range(n):
+        if lista[i] == -1:
+            distancia_minima = min(abs(i - j) for j in lista_0)
+            resultado[i] = min(distancia_minima, 9)
+    print(" ".join(map(str, resultado)))
     
 if __name__ == "__main__":
     main()
