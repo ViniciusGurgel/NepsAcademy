@@ -7,7 +7,7 @@ def main():
         restante = C // n
         contador += restante
         lista_moedas.append(restante)
-        C = C % n
+        C %= n
     print(contador)
     for i in lista_moedas:
         print(i)
