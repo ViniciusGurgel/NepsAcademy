@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm README.md
+
 # Count the number of Python files
 python_file_count=$(find . -type f -name '*.py' | wc -l)
 
@@ -9,8 +11,11 @@ java_file_count=$(find . -type f -name '*.java' | wc -l)
 # Count the number of C files
 c_file_count=$(find . -type f -name '*.c' | wc -l)
 
-# Replace the placeholders in README.md with the actual file counts
-sed -i "s/{{ PYTHON_FILE_COUNT }}/$python_file_count/g" README.md
-sed -i "s/{{ JAVA_FILE_COUNT }}/$java_file_count/g" README.md
-sed -i "s/{{ C_FILE_COUNT }}/$c_file_count/g" README.md
-
+cat <<EOF > README.md
+# NepsAcademy
+# https://neps.academy/br/exercises 
+# Resolução dos exercicios em Python, Java e C No momento estou resolvendo apenas em Python.
+# Exercícios resolvidos em Python : $python_file_count
+# Exercícios resolvidos em Java : $java_file_count
+# Exercícios resolvidos em C : $c_file_count
+EOF
