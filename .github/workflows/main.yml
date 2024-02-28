@@ -17,6 +17,8 @@ jobs:
 
       - name: Commit changes
         run: |
+          git config user.email "viviserrao03@gmail.com"
+          git config user.name "ViniciusGurgel"
           git add README.md
           git commit -m "Update .py file count [skip ci]"
           git push
