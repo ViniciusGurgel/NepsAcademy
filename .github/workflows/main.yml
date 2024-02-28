@@ -22,3 +22,5 @@ jobs:
           git add README.md
           git commit -m "Update .py file count [skip ci]"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
