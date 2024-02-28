@@ -14,7 +14,16 @@ jobs:
 
       - name: Run script to count .py files and update README
         run: bash update_py_file_count.sh
-
+  
+      - name: Check for changes
+        run: |
+          if git diff --quiet; then
+            echo "No changes detected. Exiting gracefully."
+            exit 0
+          else
+            echo "Changes detected. Proceeding with commit and push."
+          fi
+    
       - name: Set up Git
         run: |
           git config user.email "viviserrao03@gmail.com"
