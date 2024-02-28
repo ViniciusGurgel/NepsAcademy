@@ -1,0 +1,16 @@
+name: Update Py File Count
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run script to count .py files and update README
+        run: bash update_py_file_count.sh
