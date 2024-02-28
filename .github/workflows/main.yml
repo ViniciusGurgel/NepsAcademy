@@ -14,3 +14,9 @@ jobs:
 
       - name: Run script to count .py files and update README
         run: bash update_py_file_count.sh
+
+      - name: Commit changes
+        run: |
+          git add README.md
+          git commit -m "Update .py file count [skip ci]"
+          git push
