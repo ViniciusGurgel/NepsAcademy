@@ -17,5 +17,5 @@ cat <<EOF > README.md
 # Resolução dos exercicios em Python, Java e C No momento estou resolvendo apenas em Python.
 # Exercícios resolvidos em Python : $python_file_count
 # Exercícios resolvidos em Java : $java_file_count
-# Exercícios resolvidos em C : $c_file_count
+# Exercícios resolvidos em JavaScript : $c_file_count
 EOF
