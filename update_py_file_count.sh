@@ -9,13 +9,13 @@ python_file_count=$(find . -type f -name '*.py' | wc -l)
 java_file_count=$(find . -type f -name '*.java' | wc -l)
 
 # Count the number of C files
-c_file_count=$(find . -type f -name '*.c' | wc -l)
+js_file_count=$(find . -type f -name '*.js' | wc -l)
 
 cat <<EOF > README.md
 # NepsAcademy
 # https://neps.academy/br/exercises 
-# Resolução dos exercicios em Python, Java e C No momento estou resolvendo apenas em Python.
+# Resolução dos exercicios em Python, Java e JavaScript No momento estou resolvendo apenas em Python.
 # Exercícios resolvidos em Python : $python_file_count
 # Exercícios resolvidos em Java : $java_file_count
-# Exercícios resolvidos em JavaScript : $c_file_count
+# Exercícios resolvidos em JavaScript : $js_file_count
 EOF
