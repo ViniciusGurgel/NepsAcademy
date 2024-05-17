@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner obj = new Scanner(System.in);
         int N = Integer.parseInt(obj.nextLine());
-        int[] lista = new int[5];
+        int[] lista = new int[N];
         for (int i = 0; i < N; i++) {
             lista[i] = obj.nextInt();
         }
