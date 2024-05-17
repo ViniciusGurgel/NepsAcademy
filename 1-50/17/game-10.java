@@ -7,7 +7,7 @@ public class Main {
         int N = obj.nextInt();
         int D = obj.nextInt();
         int A = obj.nextInt();
-        int result = (A < D) ? D - A : D + N - A;
+        int result = (A > D) ? D + (N - A) : D - A; 
         System.out.println(result);
         obj.close();
     }
