@@ -1,0 +1,98 @@
+* MAP2: PROTOTYPE                                                         
+* INPUT USING MAP 'XXXXXXXX'                                              
+*     #CONFIRMA #CV-CONFIRMA #CV-OPCAO2 #M837D-CD-TIP-EST-ALT             
+*     #M837D-CV-NM-TIP-EST-ALT #M837D-CV-TX-DCR-EST-ALT                   
+*     #M837D-NM-TIP-EST-ALT #M837D-TX-DCR-EST-ALT #OPCAO2                 
+DEFINE DATA PARAMETER                                                     
+1 #CONFIRMA (A027)                                                        
+1  #CV-CONFIRMA (C)                                                       
+1  #CV-OPCAO2 (C)                                                         
+1 #M837D-CD-TIP-EST-ALT (I2)                                              
+1  #M837D-CV-NM-TIP-EST-ALT (C)                                           
+1  #M837D-CV-TX-DCR-EST-ALT (C)                                           
+1 #M837D-NM-TIP-EST-ALT (A030)                                            
+1 #M837D-TX-DCR-EST-ALT (A045)                                            
+1 #OPCAO2 (A001)                                                          
+END-DEFINE                                                                
+FORMAT PS=023 LS=080 ZP=OFF SG=OFF KD=OFF IP=OFF                          
+* MAP2: MAP PROFILES *****************************        410***********  
+* ,TTAAAMMOO   D I D I N D I D I        ?_)¬&:+(                       *  
+* 023079        N0NNLCN_            X        01 SYSPROF NL             *  
+************************************************************************  
+INPUT          (     IP=OFF                                           /*  
+                                                                       )  
+ 002T *PROGRAM  (AD=OD ) /*.01S008 A008 .                                 
+ 017T 'SISBB - Sistema de Informacoes Banco do Brasil'                    
+ 070T *DATX  (AD=OD EM=DD/MM/YYYY ) /*.01S010 D    .                      
+/                                                                         
+ 002T *USER  (AD=OD ) /*.01S008 A008 .                                    
+ 036T 'Clientes'(I)                                                       
+ 072T *TIMX  (AD=OD ) /*.01S008 T    .                                    
+/                                                                         
+ 002T '------------- Alteração - Tipo de Estado da Alteração a Validar'   
+ 067T '-------------'                                                     
+/                                                                         
+/                                                                         
+/                                                                         
+/                                                                         
+/                                                                         
+/                                                                         
+/                                                                         
+ 009T 'Código do Tipo..........:'(I)                                      
+ 035T #M837D-CD-TIP-EST-ALT  (AD=OI ) /*.01U005 I2              .         
+/                                                                         
+ 009T 'Nome do Tipo............:'(I)                                      
+ 035T #M837D-NM-TIP-EST-ALT  (AD=MY'_' /*.99U030 A030 30         .        
+      CV=#M837D-CV-NM-TIP-EST-ALT )                                       
+/                                                                         
+ 009T 'Descrição do Estado.....:'(I)                                      
+ 035T #M837D-TX-DCR-EST-ALT  (AD=MY'_' /*.99U045 A045 45         .        
+      CV=#M837D-CV-TX-DCR-EST-ALT )                                       
+/                                                                         
+/                                                                         
+/                                                                         
+/                                                                         
+/                                                                         
+/                                                                         
+/                                                                         
+/                                                                         
+/                                                                         
+ 042T #CONFIRMA  (AD=OY CV=#CV-CONFIRMA ) /*.01U027 A027 27         .     
+ 071T #OPCAO2  (AD=MY'_' CV=#CV-OPCAO2 ) /*.99U001 A001            .      
+/                                                                         
+ 002T '-' (078)                                                           
+/                                                                         
+ 002T 'F3'(I)                                                             
+ 005T 'Sai'                                                               
+ 010T 'F5'(I)                                                             
+ 013T 'Encerra'                                                           
+* MAP2: VALIDATION *****************************************************  
+* MAP2: END OF MAP *****************************************************  
+END                                                                       
+
+
+
+
+
+
+
+
+
+
+
+0005 * ----------------------------------------------------------------------  
+ 0010 * PGM.....:  MCIPGURG                                                     
+ 0015 * MAPA....:  MCIMGURG                                                     
+ 0020 * TITULO..:  ROTINA PARA TESTE.                                           
+ 0025 * ANALISTA:  ------------------------>  BY                                
+ 0030 *   ________ ____ _____________  ___________________ ____                 
+ 0035 *  /  _____/|    |   \______   \/  _____/\_   _____/|    |                
+ 0040 * /   \  ___|    |   /|       _/   \  ___ |    __)_ |    |                
+ 0045 * \    \_\  \    |  / |    |   \    \_\  \|        \|    |___             
+ 0050 *  \______  /______/  |____|_  /\______  /_______  /|_______ \            
+ 0055 *         \/                 \/        \/        \/         \/            
+ 0060 * DATA....:  24/10/2024                                                   
+ 0065 * OBJETIVO:  IDENTIFICAR POSSIVEIS ERROS EM SUBROTINAS/CRIAR TESTES       
+ 0070 * ----------------------------------------------------------------------  
+ 0075 * 001  24/10/24 VINICIUS  IMPLANTACAO                                     
+ 0080 * ----------------------------------------------------------------------  
